@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MYRIAD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="photographers.css" rel="stylesheet"> 
+  </head>
+  <body>
+
+
+
+<nav class="navbar">
+  <a class="navbar-brand" href="index.html">
+    <img src="assets/MYRIAD LIGHT.png" alt="MYRIAD Logo">
+  </a>
+
+ 
+  <button class="nav-toggle" aria-expanded="false" aria-controls="navbar-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+
+  <ul id="navbar-menu" class="navbar-menu">
+    <li class="menu-item"><a href="index.html">HOME</a></li>
+    <li class="menu-item"><a href="photographers.html">PHOTOGRAPHERS</a></li>
+    <li class="menu-item"><a href="services.html">SERVICES</a></li>
+    <li class="menu-item"><a href="index.html#section3">CONTACT</a></li>
+    <li class="menu-item"><a href="photographers2.html">DARK MODE</a></li>
+  </ul>
+</nav>
+
+
+<section class="photographers">
+
+  <div class="photographer-item">
+    <div class="photographer-image">
+      <a href="david.html">
+        <img src="assets/edited/david gillers/2.png" alt="David Gillers">
+      </a>
+    </div>
+    <div class="photographer-text">
+      <p class="section-caption">DAVID GILLERS</p>
+    </div>
+  </div> 
+  <div class="photographer-item">
+    <div class="photographer-image">
+      <a href="jenny.html">
+        <img src="assets/edited/jenny brough/5.png" alt="Jenny Brough">
+      </a>
+    </div>
+    <div class="photographer-text">
+      <p class="section-caption">JENNY BROUGH</p>
+    </div>
+  </div> 
+
+  <div class="photographer-item">
+    <div class="photographer-image">
+      <a href="kim.html">
+        <img src="assets/edited/kim hee june/1.png" alt="Kim Hee June">
+      </a>
+    </div>
+    <div class="photographer-text">
+      <p class="section-caption">KIM HEE JUNE</p>
+    </div>
+  </div>
+
+   <div class="photographer-item">
+    <div class="photographer-image">
+      <a href="purienne.html">
+        <img src="assets/edited/purienne/2.png" alt="Purienne">
+      </a>
+    </div>
+    <div class="photographer-text">
+      <p class="section-caption">PURIENNE</p>
+    </div>
+  </div> 
+
+   <div class="photographer-item">
+    <div class="photographer-image">
+      <a href="rasbartram.html">
+        <img src="assets/edited/rasbartram/1.png" alt="Rasbartram">
+      </a>
+    </div>
+    <div class="photographer-text">
+      <p class="section-caption">RASBARTRAM</p>
+    </div>
+  </div> 
+
+   <div class="photographer-item">
+    <div class="photographer-image">
+      <a href="stolen.html">
+        <img src="assets/photographers/stolenbesos/14.jpg" alt="Stolen Besos">
+      </a>
+    </div>
+    <div class="photographer-text">
+      <p class="section-caption">STOLEN BESOS</p>
+    </div>
+  </div> 
+
+   <div class="photographer-item">
+    <div class="photographer-image">
+      <a href="travys.html">
+        <img src="assets/edited/travys owen/1.png" alt="Travys Owen">
+      </a>
+    </div>
+    <div class="photographer-text">
+      <p class="section-caption">TRAVYS OWEN</p>
+    </div>
+  </div> 
+
+   <div class="photographer-item">
+    <div class="photographer-image">
+      <a href="trekoch.html">
+        <img src="assets/edited/trekoch/7.png" alt="Trekoch">
+      </a>
+    </div>
+    <div class="photographer-text">
+      <p class="section-caption">TREKOCH</p>
+    </div>
+  </div> 
+
+</section>
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-left">
+    <div class="page-name" id="pageName">PHOTOGRAPHERS</div>
+    <div class="country">PHILIPPINES</div>
+  </div>
+  <div class="footer-right">
+    <div class = "language">ENGLISH</div>
+    © Shanne Quitlong 2025 All Rights Reserved
+  </div>
+</footer>
+
+
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.getElementById('navbar-menu');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); 
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      navMenu.classList.toggle('open', !open);
+      document.body.classList.toggle('no-scroll', !open);
+    });
+
+    
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') && 
+          !navMenu.contains(e.target) && 
+          !navToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('no-scroll');
+      }
+    });
+  }
+</script>
+
+  </body>
+</html>

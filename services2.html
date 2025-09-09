@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MYRIAD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="services2.css" rel="stylesheet"> 
+  </head>
+  <body>
+
+
+
+<nav class="navbar">
+  <a class="navbar-brand" href="index.html">
+    <img src="assets/myriad dark.png" alt="MYRIAD Logo">
+  </a>
+
+ 
+  <button class="nav-toggle" aria-expanded="false" aria-controls="navbar-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+
+  <ul id="navbar-menu" class="navbar-menu">
+    <li class="menu-item"><a href="index2.html">HOME</a></li>
+    <li class="menu-item"><a href="photographers2.html">PHOTOGRAPHERS</a></li>
+    <li class="menu-item"><a href="services2.html">SERVICES</a></li>
+    <li class="menu-item"><a href="index2.html#section3">CONTACT</a></li>
+    <li class="menu-item"><a href="services.html">LIGHT MODE</a></li>
+  </ul>
+</nav>
+
+
+ <section class="hero">
+    <div class="content-box">
+      <h4>MYRIAD Creative Studio</h4>
+      <h2>What We Do</h2>
+      <p> We are MYRIAD Creative Studio, where creativity meets professionalism. Our services are designed to elevate your brand and tell your story through the lens of our cameras.</p> 
+      <p>To Capture. To Film. To Immortalize. Form. Soul. Focus. Light.</p>
+      <a href="photographers2.html">DISCOVER OUR PHOTOGRAPHERS</a>
+    </div>
+  </section>
+
+<section class="quote">
+    <div class="quote-container">
+      <p class="quote-text">
+        From creativity to execution. We bring your vision to life with precision and passion. Our team of skilled photographers and videographers are dedicated to capturing the essence of your brand, ensuring every moment is immortalized in stunning detail.
+      </p>
+    </div>
+  </section>
+
+ <section class="hero second-hero">
+    <div class="content-box">
+      <h4>Designing With Purpose</h4>
+      <h2>CREATIVE APPROACH</h2>
+      <p> At MYRIAD Creative Studio, we believe every project begins with intention. 
+        We approach design not just as an art, but as a tool for meaningful communication, 
+        shaping ideas into experiences that inspire, connect, and create impact.</p> 
+      <a href="index2.html#section3">CONTACT US</a>
+    </div>
+  </section>
+
+
+<section class="info-section">
+  <div class="info-left">
+    <img src="assets/myriad dark.png" alt="MYRIAD Logo" class="info-logo">
+    <p>
+      Creative mind behind <strong>@myriadstudio</strong>
+    </p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/burntcigarr/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/quitlongshan"><i class="fab fa-facebook"></i></a>
+      <a href="https://ph.pinterest.com/bloodylustss/"><i class="fab fa-pinterest"></i></a>
+      <a href="mailto:your@quitlongshan@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <div class="info-center">
+    <h3>Join the Newsletter</h3>
+    <p>Inspiration delivered straight to your inbox</p>
+    <form action ="https://formspree.io/f/meolqbrw" method="POST" class="newsletter-form">
+      <input type="text" name="first_name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <button type="submit">SIGN UP</button>
+    </form>
+  </div>
+
+  <div id="success-overlay" class="success-overlay">
+  <div class="overlay-content">
+    <p>Message Received</p>
+  </div>
+</div>
+
+  <div class="info-right">
+    <ul>
+      <li><a href="index2.html">HOME</a></li>
+      <li><a href="photographers2.html">PHOTOGRAPHERS</a></li>
+      <li><a href="services2.html">SERVICES</a></li>
+      <li><a href="index2.html#section3">CONTACT</a></li>
+    </ul>
+  </div>
+</section>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+<footer class="footer">
+  <div class="footer-left">
+    <div class="page-name" id="pageName">SERVICES</div>
+    <div class="country">PHILIPPINES</div>
+  </div>
+  <div class="footer-right">
+    <div class = "language">ENGLISH</div>
+    © Shanne Quitlong 2025 All Rights Reserved
+  </div>
+</footer>
+
+<script>
+  
+  overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
+</script>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.getElementById('navbar-menu');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation(); 
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!open));
+      navMenu.classList.toggle('open', !open);
+      document.body.classList.toggle('no-scroll', !open);
+    });
+
+    
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') && 
+          !navMenu.contains(e.target) && 
+          !navToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('no-scroll');
+      }
+    });
+  }
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,378 @@
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #f2f2f2;
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;    
+  justify-content: space-between;  
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000;
+  min-height: 140px;
+}
+
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-right: 2rem;
+  color: #000; 
+}
+
+
+.navbar-brand img {
+  max-height: 12vw;   
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .navbar-brand img {
+    max-height: 50px; 
+  }
+
+  .navbar {
+    min-height: 80px; 
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-menu {
+    gap: 0.8rem;      
+    font-size: 0.8rem; 
+    top: 0;            
+  }
+}
+
+
+.navbar-nav .nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1; 
+  position: relative;
+  top: -30px; 
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;    
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+
+.menu-item {
+  position: relative;
+}
+
+
+.menu-item > a {
+  text-decoration: none;
+  color: #000; 
+  font-weight: 500;
+  padding: 1rem 0;
+  display: block;
+}
+
+
+.menu-item:hover .submenu {
+  display: block;
+}
+
+.menu-item:hover > a {
+  color: #000;
+}
+
+
+.nav-toggle {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  width: 28px;   
+  height: 28px;
+  display: none;            
+  position: relative;
+  margin-left: auto;        
+}
+
+.nav-toggle .bar {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: #000;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.nav-toggle .bar:nth-child(1) { 
+  top: 6px; 
+}
+
+.nav-toggle .bar:nth-child(2) { 
+  top: 12px; 
+}
+
+.nav-toggle .bar:nth-child(3) { 
+  top: 18px; 
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) { 
+  transform: translateY(7px) rotate(45deg); 
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) { 
+  opacity: 0; 
+}
+
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) { 
+  transform: translateY(-7px) rotate(-45deg); 
+}
+
+
+body.no-scroll { overflow: hidden; }
+
+
+.section {
+  display: flex;
+  min-height: auto;         
+  padding: 60px 0; 
+  background-color: #f2f2f2;
+  justify-content: center;
+}
+
+
+.photographers {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;             
+  width: 100%;
+  padding-top: 12%;
+  
+}
+
+.photographer-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 100px;
+  flex-direction: row !important;
+}   
+
+
+.photographer-item:nth-child(even) {
+  flex-direction: row-reverse !important;
+}
+
+.photographer-image {
+  flex: 0 0 55%;
+  min-width: 180px; 
+}
+
+.photographer-image img {
+  width: 100%;                
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.photographer-text {
+  flex: 1;                     
+  display: flex;
+  justify-content: center;     
+  align-items: center;
+}
+
+.section-caption {
+  font-size: 2.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+}
+
+
+
+@media (max-width: 768px) {
+  .photographers {
+    padding-top: 100px;
+  }
+  .photographer-item {
+    flex-direction: column !important; 
+    text-align: center;
+    margin-bottom: 50px; /
+  }
+
+  .photographer-item:nth-child(even) {
+    flex-direction: column !important; 
+  }
+
+  .photographer-image, 
+  .photographer-text {
+    flex: none;
+    width: 100%;   
+  }
+
+  .section-caption {
+    font-size: 1.5rem; 
+    white-space: normal; 
+    margin-top: 15px;
+  }
+}
+
+
+
+.footer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  flex-wrap: wrap;   
+  padding: 2rem 1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 0.85rem;
+  color: #000000;
+  background: transparent;
+}
+
+.footer-left, .footer-right {
+   display: flex;
+  flex-direction: column;
+}
+.page-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.country, .footer-right , .language{
+  color: #000000;
+}
+
+.language {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+
+
+@media (max-width: 576px) {
+  .footer {
+    flex-direction: row;         
+    justify-content: space-between;
+    align-items: flex-start;     
+    padding: 0.5rem 0.75rem;
+    font-size: clamp(10px, 2.6vw, 12px);
+  }
+
+  .footer-left,
+  .footer-right {
+    display: flex;
+    flex-direction: column;      
+    gap: 0.2rem;                 
+  }
+
+  .footer * {
+    line-height: 1.2;            
+  }
+
+  .language {
+    font-size: clamp(10px, 2.6vw, 12px); 
+    margin-top: 0; 
+  }
+}
+
+
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.5rem 1rem;
+    min-height: 80px;  
+  }
+
+
+  #navbar-menu.navbar-menu {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0; right: 0;
+    background: #f2f2f2;
+    z-index: 1500;
+    padding: 80px 1rem 2rem;  
+    display: grid !important;
+    gap: 1rem;
+    transform: translateY(-100%);  
+    transition: transform 0.25s ease;
+  }
+
+  #navbar-menu.open { 
+    transform: translateY(0); 
+  }
+
+  .navbar-menu li { margin: 0; }
+  .menu-item > a {
+    display: block;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    line-height: 1.2;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .navbar-brand img {
+    max-height: 100px; 
+  }
+}
+
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    max-height: 70px; 
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar { justify-content: space-between; align-items: center; }
+  .nav-toggle { display: none; }
+  .navbar-menu {
+    position: static !important;
+    transform: none !important;
+    background: transparent !important;
+    padding: 0;
+    display: flex !important;
+    gap: 1.5rem;
+    margin-left: auto;
+  }
+}
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+
+
+  #navbar-menu.navbar-menu {
+    display: none;               
+    position: fixed;
+    top: 0;
+    left: 0; right: 0;
+    background: #f2f2f2;
+    z-index: 1500;
+    padding: 80px 1rem 2rem;
+    gap: 1rem;
+  }
+
+
+  #navbar-menu.open {
+    display: grid;               
+    transform: none;             
+  }
+}
+
+
+
