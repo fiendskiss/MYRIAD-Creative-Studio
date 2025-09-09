@@ -320,6 +320,7 @@ body.no-scroll { overflow: hidden; }
   cursor: pointer;
   font-size: 0.85rem;
   transition: all 0.3s ease;
+  color: #000000
 }
 
 .contact-form button:hover {
