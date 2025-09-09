@@ -150,7 +150,7 @@ body.no-scroll { overflow: hidden; }
 
 .hero {
   height: 100vh;
-  background: url( assets/photographers/travys/28.jpg) center/cover no-repeat;
+  background: url( https://ik.imagekit.io/fiendskiss/MYRIAD-assets/photographers/travys/28.jpg) center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,7 +220,7 @@ body.no-scroll { overflow: hidden; }
 }
 
 .second-hero {
-  background: url("assets/photographers/travys/13.jpg") center/cover no-repeat;
+  background: url("https://ik.imagekit.io/fiendskiss/MYRIAD-assets/photographers/travys/13.jpg") center/cover no-repeat;
 }
 
 
